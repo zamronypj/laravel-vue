@@ -27,6 +27,13 @@ Build frontend JS, Sass etc
 $ npm run dev
 ```
 
+To build for production
+
+```
+$ npm run prod
+```
+
+
 ## Run
 
 To run application,
