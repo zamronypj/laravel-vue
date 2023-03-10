@@ -19,6 +19,14 @@ $ npm install
 $ php artisan key:generate
 ```
 
+## Build
+
+Build frontend JS, Sass etc
+
+```
+$ npm run dev
+```
+
 ## Run
 
 To run application,
@@ -32,6 +40,9 @@ or using Laravel Sail
 ```
 $ ./vendor/bin/sail up
 ```
+
+But make sure you check if MySQL port and http port are not used. If used, you need to
+change `FORWARD_DB_PORT`, `DB_PORT` and or `APP_PORT` environment variables so that it does not conflict.
 
 To stop, just press Ctl+C or
 

@@ -11,6 +11,8 @@ window.Vue = require('vue').default;
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
+import costStore from './store/cost';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -32,4 +34,5 @@ Vue.component('home-component', require('./components/home/HomeComponent.vue').d
 
 const app = new Vue({
     el: '#app',
+    store: new Vuex.Store(costStore)
 });

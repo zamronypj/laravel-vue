@@ -19,6 +19,7 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
         @stack('third_party_stylesheets')
         @stack('page_css')
     </head>

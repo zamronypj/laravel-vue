@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/uoms', [\App\Http\Controllers\Api\UomsController::class, 'index']);
+Route::get('/currencies', [\App\Http\Controllers\Api\CurrencyController::class, 'index']);
+Route::get('/charge-to', [\App\Http\Controllers\Api\ChargeToController::class, 'index']);
