@@ -5365,11 +5365,11 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(['selectedCurrencies', 'vatByCurrency', 'subTotalByCurrency', 'totalByCurrency'])),
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(['selectedCurrencies', 'vatByCurrency', 'subTotalByCurrency', 'totalByCurrency', 'currName'])),
   methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapMutations)(['addCost'])), {}, {
     newCost: function newCost() {
       var cost = {
-        desc: 'Description',
+        desc: '',
         qty: 0,
         price: 0,
         currency: 0,
@@ -5462,7 +5462,15 @@ var render = function render() {
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("button", [_vm._v("Cancel")]), _vm._v(" "), _c("button", [_vm._v("Save Draft")]), _vm._v(" "), _c("button", [_vm._v("Submit")])]);
+  return _c("div", {
+    staticClass: "d-flex justify-content-end"
+  }, [_c("button", {
+    staticClass: "btn btn-default"
+  }, [_vm._v("Cancel")]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-default"
+  }, [_vm._v("Save Draft")]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-green"
+  }, [_vm._v("Submit")])]);
 }];
 render._withStripped = true;
 
@@ -5518,7 +5526,7 @@ var render = function render() {
   }, _vm._l(_vm.selectedCurrencies, function (curr) {
     return _c("div", {
       key: curr.id
-    }, [_c("span", [_vm._v(_vm._s(curr) + " in Total")]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.vatByCurrency(curr)))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.subTotalByCurrency(curr)))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.totalByCurrency(curr)))])]);
+    }, [_c("span", [_vm._v(_vm._s(_vm.currName(curr)) + " in Total")]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.vatByCurrency(curr)))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.subTotalByCurrency(curr)))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.totalByCurrency(curr)))])]);
   }), 0), _vm._v(" "), _c("th", [_vm._v(" ")]), _vm._v(" "), _c("th", [_c("button", {
     staticClass: "btn btn-primary",
     on: {
@@ -5587,7 +5595,8 @@ var render = function render() {
         expression: "cost.desc"
       }],
       attrs: {
-        type: "text"
+        type: "text",
+        placeholder: "Description"
       },
       domProps: {
         value: cost.desc
@@ -6013,6 +6022,19 @@ var costStore = {
         }).reduce(function (total, cost) {
           return total + getTotal(cost);
         }, 0);
+      };
+    },
+    /**
+     * get currency name by id
+     * @param {*} aState
+     * @returns
+     */
+    currName: function currName(aState) {
+      return function (curr) {
+        var currArr = aState.currencies.filter(function (item) {
+          return item.id === curr;
+        });
+        return currArr && currArr.length > 0 ? currArr[0].name : '-';
       };
     }
   },

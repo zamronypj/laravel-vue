@@ -4,7 +4,7 @@
             <th colspan="7">Exchange Rate 1 USD = 3.746 AED</th>
             <th colspan="4">
                 <div v-for="curr in selectedCurrencies" :key="curr.id">
-                    <span>{{ curr }} in Total</span>
+                    <span>{{ currName(curr) }} in Total</span>
                     <span>{{ vatByCurrency(curr) }}</span>
                     <span>{{ subTotalByCurrency(curr) }}</span>
                     <span>{{ totalByCurrency(curr) }}</span>
@@ -27,7 +27,8 @@ export default {
             'selectedCurrencies',
             'vatByCurrency',
             'subTotalByCurrency',
-            'totalByCurrency'
+            'totalByCurrency',
+            'currName'
         ])
     },
 
@@ -36,7 +37,7 @@ export default {
 
         newCost() {
             const cost = {
-                desc: 'Description',
+                desc: '',
                 qty: 0,
                 price: 0,
                 currency:0,

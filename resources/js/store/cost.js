@@ -81,6 +81,16 @@ const costStore = {
             return aState.costs
                 .filter(cost => cost.currency === curr)
                 .reduce((total, cost) => total + getTotal(cost), 0)
+        },
+
+        /**
+         * get currency name by id
+         * @param {*} aState
+         * @returns
+         */
+        currName: (aState) => (curr) => {
+            const currArr = aState.currencies.filter(item => item.id === curr)
+            return currArr && currArr.length > 0 ? currArr[0].name : '-'
         }
     },
 

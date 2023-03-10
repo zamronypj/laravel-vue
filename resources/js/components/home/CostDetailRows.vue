@@ -2,7 +2,7 @@
     <tbody>
         <tr v-for="cost in costs" :key="cost.id">
             <td>
-                <input type="text" v-model="cost.desc">
+                <input type="text" v-model="cost.desc" placeholder="Description">
             </td>
 
             <td>
