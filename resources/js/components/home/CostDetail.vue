@@ -1,5 +1,5 @@
 <template>
-    <table>
+    <table class="cost-detail">
         <CostDetailHeading></CostDetailHeading>
         <CostDetailFooter></CostDetailFooter>
         <CostDetailRows></CostDetailRows>
@@ -20,3 +20,9 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.cost-detail {
+    width:100%;
+}
+</style>
