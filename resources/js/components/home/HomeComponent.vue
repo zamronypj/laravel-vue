@@ -2,9 +2,12 @@
     <div class="container home">
         <div class="row justify-content-center">
             <div class="col">
-                <h2>Cost Detail <i class="fa fa-chevron-down"></i></h2>
+                <LogisticInstruction></LogisticInstruction>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col">
                 <CostDetail></CostDetail>
-                <ButtonSection></ButtonSection>
             </div>
         </div>
     </div>
@@ -12,14 +15,14 @@
 
 <script>
 
-import ButtonSection from '../common/ButtonSection.vue';
-import CostDetail from './CostDetail.vue';
+import CostDetail from './cost-detail/CostDetail.vue';
+import LogisticInstruction from './logistic-instruction/LogisticInstruction.vue';
 
 export default {
     name: 'HomeComponent',
     components: {
         CostDetail,
-        ButtonSection
+        LogisticInstruction
     },
 
     mounted() {
@@ -27,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .home {
   &.container {
     max-width: 100%;

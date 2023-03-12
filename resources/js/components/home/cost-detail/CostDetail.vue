@@ -1,25 +1,21 @@
 <template>
-    <div class="table-responsive">
-        <table class="table table-sm">
-            <CostDetailHeading></CostDetailHeading>
-            <CostDetailFooter></CostDetailFooter>
-            <CostDetailRows></CostDetailRows>
-        </table>
+    <div>
+        <h2>Cost Detail <i class="fa fa-chevron-down"></i></h2>
+        <CostDetailTable></CostDetailTable>
+        <ButtonSection></ButtonSection>
+
     </div>
 </template>
 
 <script>
-import CostDetailRows from './CostDetailRows.vue'
-import CostDetailHeading from './CostDetailHeading.vue'
-import CostDetailFooter from './CostDetailFooter.vue'
+import ButtonSection from '../../common/ButtonSection.vue';
+import CostDetailTable from './CostDetailTable.vue';
 
 export default {
     name: 'CostDetail',
     components: {
-        CostDetailRows,
-        CostDetailFooter,
-        CostDetailHeading
+        CostDetailTable,
+        ButtonSection
     }
 }
 </script>
-
