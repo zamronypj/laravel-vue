@@ -27,7 +27,7 @@
                 <input type="number" v-model="cost.vatPercent">
             </td>
 
-            <td class="separator"><i class="fas fa-chevron-right"></i></td>
+            <td class="separator"><i class="fas fa-arrow-right"></i></td>
 
             <td class="curr">
                 <select v-model="cost.currency">
@@ -35,9 +35,9 @@
                 </select>
             </td>
 
-            <td class="vat-amount"><span>{{ vat(cost).toLocaleString() }}</span></td>
-            <td class="subtotal"><span>{{ subTotal(cost).toLocaleString() }}</span></td>
-            <td class="total"><span>{{ total(cost).toLocaleString() }}</span></td>
+            <td class="vat-amount"><span>{{ vat(cost) }}</span></td>
+            <td class="subtotal"><span>{{ subTotal(cost) }}</span></td>
+            <td class="total"><span>{{ total(cost) }}</span></td>
             <td class="charge-to">
                 <select v-model="cost.charge">
                     <option v-for="ch in chargeTo" :key="ch.id" :value="ch.id">{{ ch.name }}</option>
@@ -87,6 +87,12 @@ export default {
         }
     }
 
+    .separator {
+        i {
+            width:30px;
+        }
+    }
+
     .uom, .curr {
         select {
             width: 80px;
@@ -94,7 +100,7 @@ export default {
     }
     .price {
         input {
-            width: 80px;
+            width: 100px;
         }
     }
 

@@ -10,3 +10,17 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
+
+
+$mainPrimaryColor:rgb(0, 128, 128);
+$mainPrimaryTextColor: #fff;
+.btn-primary {
+    @include button-variant($mainPrimaryColor, darken($mainPrimaryColor, 7.5%), darken($mainPrimaryColor, 10%), lighten($mainPrimaryColor,5%), lighten($mainPrimaryColor, 10%), darken($mainPrimaryColor,30%));
+    color: $mainPrimaryTextColor;
+}
+
+.btn-outline-primary {
+    @include button-outline-variant($mainPrimaryColor, #222222, lighten($mainPrimaryColor,5%), $mainPrimaryColor);
+    color: $mainPrimaryTextColor;
+}
+

@@ -36,18 +36,22 @@ const costStore = {
 
         discount: (aState) => (cost) => {
             return getDiscountAmount(cost)
+                .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
         vat: (state) => (cost) => {
             return getVatAmount(cost)
+                .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
         subTotal: (aState) => (cost) => {
             return getSubTotal(cost)
+                .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
         total: (aState) => (cost) => {
             return getTotal(cost)
+                .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
         /**
@@ -59,6 +63,7 @@ const costStore = {
             return aState.costs
                 .filter(cost => cost.currency === curr)
                 .reduce((total, cost) => total + getVatAmount(cost), 0)
+                .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
         /**
@@ -70,6 +75,7 @@ const costStore = {
             return aState.costs
                 .filter(cost => cost.currency === curr)
                 .reduce((total, cost) => total + getSubTotal(cost), 0)
+                .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
         /**
@@ -81,6 +87,7 @@ const costStore = {
             return aState.costs
                 .filter(cost => cost.currency === curr)
                 .reduce((total, cost) => total + getTotal(cost), 0)
+                .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
         /**
