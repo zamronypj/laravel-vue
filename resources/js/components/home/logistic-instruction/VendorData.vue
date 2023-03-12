@@ -1,27 +1,29 @@
 <template>
-    <div class="d-flex vendor">
-        <label>
-            <span>Assigned Vendor</span>
-            <select v-model="assignedVendor">
-                <option v-for="vendor in vendors" :key="vendor.id" :value="vendor">{{ vendor.name }}</option>
-            </select>
+    <div class="vendor">
+        <div class="d-flex">
+            <label>
+                <span>Assigned Vendor</span>
+                <select v-model="assignedVendor">
+                    <option v-for="vendor in vendors" :key="vendor.id" :value="vendor">{{ vendor.name }}</option>
+                </select>
 
-        </label>
-        <label>
-            <span>Attention Of</span>
-            <input v-model="pic" type="text">
-        </label>
+            </label>
+            <label>
+                <span>Attention Of</span>
+                <input v-model="pic" type="text">
+            </label>
 
-        <label>
-            <span>Quotation No.</span>
-            <input v-model="quote" type="text">
-        </label>
-        <label>
-            <span>Invoice To</span>
-            <select v-model="assignedInvoiceTo">
-                <option v-for="inv in invoiceTo" :key="inv.id" :value="inv.id">{{ inv.name }}</option>
-            </select>
-        </label>
+            <label>
+                <span>Quotation No.</span>
+                <input v-model="quote" type="text">
+            </label>
+            <label>
+                <span>Invoice To</span>
+                <select v-model="assignedInvoiceTo">
+                    <option v-for="inv in invoiceTo" :key="inv.id" :value="inv.id">{{ inv.name }}</option>
+                </select>
+            </label>
+        </div>
         <div>
             <div>Vendor Address</div>
             <div>{{ vendorAddress }}</div>
@@ -98,7 +100,10 @@ export default {
 
 <style lang="scss" scoped>
 .vendor {
+    padding: 20px;
+
     label {
+        padding:20px;
         span {
             display: block;
         }

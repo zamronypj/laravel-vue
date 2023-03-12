@@ -1,9 +1,11 @@
 <template>
-    <div class="d-flex">
-        <h2 @click="toggleShow">
-            <i class="fa fa-truck text-logistic"></i> Logistic Instruction <i class="fa" :class="toggleClass"></i>
-        </h2>
-        <span class="status">{{ status }}</span>
+    <div class="logistic">
+        <div class="d-flex align-items-center">
+            <h2 @click="toggleShow">
+                <i class="fa fa-truck text-logistic"></i> Logistic Instruction <i class="fa" :class="toggleClass"></i>
+            </h2>
+            <span class="status">{{ status }}</span>
+        </div>
         <LogisticData v-if="shouldShow"></LogisticData>
     </div>
 </template>
@@ -18,12 +20,14 @@ export default {
     components: { LogisticData },
     mixins: [ toggleMixin ],
     computed: {
-        ...mapState('logistic', [ 'status', 'quotation' ])
+        ...mapState('logistic', [ 'status' ])
     }
 }
 </script>
 
 <style lang="scss" scoped>
+.logistic {
+
     h2 {
         font-size: medium;
         font-weight: bold;
@@ -32,5 +36,14 @@ export default {
             color:teal;
         }
     }
+    .status {
+        display: flex;
+        background-color: #e0e0e0;
+        padding: 2px 30px;
+        border-radius: 10px;
+        margin-left:50px;
+    }
+}
+
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex">
+    <div class="d-flex flex-column contract">
         <label>
             <span>Customer - Contract</span>
             <select v-model="assignedContract">
@@ -58,3 +58,18 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+.contract {
+    padding: 20px;
+
+    border-left: 3px dotted #c0c0c0;
+
+    label {
+        padding:20px;
+        span {
+            display: block;
+        }
+    }
+
+}
+</style>
