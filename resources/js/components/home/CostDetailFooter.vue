@@ -11,7 +11,7 @@
                 </div>
             </th>
             <th>&nbsp;</th>
-            <th>
+            <th class="action-btn">
                 <button class="btn btn-primary" @click="newCost"><i class="fa fa-plus"></i></button>
             </th>
         </tr>
@@ -51,3 +51,12 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+    .action-btn {
+        text-align: right;
+        button {
+            background-color: teal;
+        }
+    }
+</style>

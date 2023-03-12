@@ -44,7 +44,7 @@
                 </select>
             </td>
             <td class="action-btn">
-                <button class="btn btn-default" @click="removeCost(cost)">
+                <button class="btn btn-grey" @click="removeCost(cost)">
                     <i class="fa fa-minus"></i>
                 </button>
             </td>
@@ -106,5 +106,8 @@ export default {
 
     .action-btn {
         text-align: right;
+        button {
+            background-color: #d0d0d0;
+        }
     }
 </style>
