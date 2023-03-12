@@ -1,49 +1,53 @@
 <template>
     <tbody>
         <tr v-for="cost in costs" :key="cost.id">
-            <td>
+            <td class="desc">
                 <input type="text" v-model="cost.desc" placeholder="Description">
             </td>
 
-            <td>
+            <td class="qty">
                 <input type="number" v-model="cost.qty">
             </td>
 
-            <td>
+            <td class="uom">
                 <select v-model="cost.uom">
                     <option v-for="uom in uoms" :key="uom.id" :value="uom.id">{{ uom.name }}</option>
                 </select>
             </td>
 
-            <td>
+            <td class="price">
                 <input type="number" v-model="cost.price" placeholder="Unit price">
             </td>
 
-            <td>
+            <td class="discount">
                 <input type="number" v-model="cost.discountPercent">
             </td>
 
-            <td>
+            <td class="vat">
                 <input type="number" v-model="cost.vatPercent">
             </td>
 
-            <td><i class="fas fa-chevron-right"></i></td>
+            <td class="separator"><i class="fas fa-chevron-right"></i></td>
 
-            <td>
+            <td class="curr">
                 <select v-model="cost.currency">
                     <option v-for="curr in currencies" :key="curr.id" :value="curr.id">{{ curr.name }}</option>
                 </select>
             </td>
 
-            <td>{{ vat(cost) }}</td>
-            <td>{{ subTotal(cost) }}</td>
-            <td>{{ total(cost) }}</td>
-            <td>
+            <td class="vat-amount"><span>{{ vat(cost).toLocaleString() }}</span></td>
+            <td class="subtotal"><span>{{ subTotal(cost).toLocaleString() }}</span></td>
+            <td class="total"><span>{{ total(cost).toLocaleString() }}</span></td>
+            <td class="charge-to">
                 <select v-model="cost.charge">
                     <option v-for="ch in chargeTo" :key="ch.id" :value="ch.id">{{ ch.name }}</option>
                 </select>
             </td>
-            <td><button class="btn btn-default" @click="removeCost(cost)"><i class="fa fa-minus"></i></button></td>
+            <td class="action-btn">
+                <button class="btn btn-default" @click="removeCost(cost)">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </td>
         </tr>
     </tbody>
 </template>
@@ -70,3 +74,37 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+    .desc {
+        input {
+            width: 150px;
+        }
+    }
+    .qty, .discount, .vat {
+        input {
+            width: 50px;
+        }
+    }
+
+    .uom, .curr {
+        select {
+            width: 80px;
+        }
+    }
+    .price {
+        input {
+            width: 80px;
+        }
+    }
+
+    .vat-amount, .subtotal, .total {
+        span {
+            width:20%;
+        }
+    }
+
+    .action-btn {
+        text-align: right;
+    }
+</style>

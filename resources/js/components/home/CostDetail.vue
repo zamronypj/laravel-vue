@@ -1,6 +1,6 @@
 <template>
     <div class="table-responsive">
-        <table class="table table-sm cost-detail">
+        <table class="table table-sm">
             <CostDetailHeading></CostDetailHeading>
             <CostDetailFooter></CostDetailFooter>
             <CostDetailRows></CostDetailRows>
@@ -23,15 +23,3 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.cost-detail {
-    table-layout: fixed;
-
-    .desc {
-        width:150px;
-    }
-    .qty {
-        width:50px;
-    }
-}
-</style>
