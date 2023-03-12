@@ -32,6 +32,8 @@ export default {
         font-size: medium;
         font-weight: bold;
         cursor: pointer;
+        padding-top: 10px;
+        padding-bottom: 10px;
         .text-logistic {
             color:teal;
         }

@@ -31,5 +31,7 @@ export default {
         font-weight: bold;
         color:teal;
         cursor: pointer;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 </style>
