@@ -1,9 +1,11 @@
 <template>
-    <table class="cost-detail">
-        <CostDetailHeading></CostDetailHeading>
-        <CostDetailFooter></CostDetailFooter>
-        <CostDetailRows></CostDetailRows>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-sm cost-detail">
+            <CostDetailHeading></CostDetailHeading>
+            <CostDetailFooter></CostDetailFooter>
+            <CostDetailRows></CostDetailRows>
+        </table>
+    </div>
 </template>
 
 <script>
@@ -21,8 +23,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .cost-detail {
-    width:100%;
+    table-layout: fixed;
+
+    .desc {
+        width:150px;
+    }
+    .qty {
+        width:50px;
+    }
 }
 </style>

@@ -1,14 +1,14 @@
 <template>
     <thead>
         <tr>
-            <th>Description</th>
-            <th>Qty</th>
-            <th>UOM</th>
-            <th>Unit Price</th>
-            <th>Discount (%)</th>
-            <th>VAT (%)</th>
+            <th class="desc">Description</th>
+            <th class="qty">Qty</th>
+            <th class="uom">UOM</th>
+            <th class="price">Unit Price</th>
+            <th class="disc">Discount (%)</th>
+            <th class="vat">VAT (%)</th>
             <th>&nbsp;</th>
-            <th>Currency</th>
+            <th class="curr">Currency</th>
             <th>VAT Amount</th>
             <th>Sub Total</th>
             <th>Total</th>
@@ -17,3 +17,4 @@
         </tr>
     </thead>
 </template>
+

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container home">
         <div class="row justify-content-center">
             <div class="col">
                 <CostDetail></CostDetail>
@@ -25,3 +25,12 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+.home {
+  &.container {
+    max-width: 100%;
+    padding:10px;
+  }
+}
+</style>

@@ -16,7 +16,7 @@
             </td>
 
             <td>
-                <input type="number" v-model="cost.price">
+                <input type="number" v-model="cost.price" placeholder="Unit price">
             </td>
 
             <td>
