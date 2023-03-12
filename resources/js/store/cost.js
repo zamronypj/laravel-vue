@@ -14,6 +14,7 @@ const getTotal = (cost) => (1 + getVat(cost)) * getSubTotal(cost)
  * Vuex store to maintain costs data
  */
 const costStore = {
+    namespaced: true,
     state: {
       costs: [],
       uoms: [],

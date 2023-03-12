@@ -58,13 +58,13 @@ import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
 
 export default {
     computed: {
-        ...mapState([ 'costs', 'uoms', 'currencies', 'chargeTo' ]),
-        ...mapGetters([ 'vat', 'subTotal', 'total' ])
+        ...mapState('cost', [ 'costs', 'uoms', 'currencies', 'chargeTo' ]),
+        ...mapGetters('cost', [ 'vat', 'subTotal', 'total' ])
     },
 
     methods: {
-        ...mapActions([ 'fetchUoms', 'fetchCurrencies', 'fetchChargeToList' ]),
-        ...mapMutations([ 'removeCost' ]),
+        ...mapActions('cost', [ 'fetchUoms', 'fetchCurrencies', 'fetchChargeToList' ]),
+        ...mapMutations('cost', [ 'removeCost' ]),
     },
 
     mounted() {

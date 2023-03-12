@@ -30,7 +30,7 @@ import { mapGetters, mapMutations } from 'vuex'
 
 export default {
     computed: {
-        ...mapGetters([
+        ...mapGetters('cost', [
             'selectedCurrencies',
             'vatByCurrency',
             'subTotalByCurrency',
@@ -52,7 +52,7 @@ export default {
     },
 
     methods: {
-        ...mapMutations([ 'addCost']),
+        ...mapMutations('cost', [ 'addCost']),
 
         newCost() {
             const cost = {

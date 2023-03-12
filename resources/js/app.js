@@ -11,7 +11,7 @@ window.Vue = require('vue').default;
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
-import costStore from './store/cost';
+import mainStore from './store/main';
 
 /**
  * The following block of code may be used to automatically register your
@@ -34,5 +34,5 @@ Vue.component('home-component', require('./components/home/HomeComponent.vue').d
 
 const app = new Vue({
     el: '#app',
-    store: new Vuex.Store(costStore)
+    store: new Vuex.Store(mainStore)
 });

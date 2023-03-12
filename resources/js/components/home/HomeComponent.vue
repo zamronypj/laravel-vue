@@ -20,12 +20,10 @@ import LogisticInstruction from './logistic-instruction/LogisticInstruction.vue'
 
 export default {
     name: 'HomeComponent',
+
     components: {
         CostDetail,
         LogisticInstruction
-    },
-
-    mounted() {
     }
 }
 </script>
@@ -36,11 +34,6 @@ export default {
     max-width: 100%;
     padding:10px;
 
-    h2 {
-        font-size: medium;
-        font-weight: bold;
-        color:teal;
-    }
   }
 }
 </style>

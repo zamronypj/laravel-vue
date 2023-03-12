@@ -21,3 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/uoms', [\App\Http\Controllers\Api\UomsController::class, 'index']);
 Route::get('/currencies', [\App\Http\Controllers\Api\CurrencyController::class, 'index']);
 Route::get('/charge-to', [\App\Http\Controllers\Api\ChargeToController::class, 'index']);
+Route::get('/vendors', [\App\Http\Controllers\Api\VendorController::class, 'index']);
+Route::get('/contracts', [\App\Http\Controllers\Api\ContractController::class, 'index']);
+Route::get('/purchase-orders', [\App\Http\Controllers\Api\PurchaseOrderController::class, 'index']);
+Route::get('/invoice-to', [\App\Http\Controllers\Api\InvoiceToController::class, 'index']);
