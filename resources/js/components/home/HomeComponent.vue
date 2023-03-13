@@ -2,6 +2,12 @@
     <div class="container home">
         <div class="row justify-content-center">
             <div class="col">
+                <h1>3rd Party Instruction</h1>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col">
                 <LogisticInstruction></LogisticInstruction>
             </div>
         </div>
@@ -32,8 +38,12 @@ export default {
 .home {
   &.container {
     max-width: 100%;
-    padding:10px;
+    padding:20px;
 
+    h1 {
+        font-size: large;
+        font-weight: bold;
+    }
   }
 }
 </style>
