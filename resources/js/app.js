@@ -4,9 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
-window.Vue = require('vue').default;
+import './bootstrap';
+import Vue from 'vue';
 
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -24,7 +23,8 @@ import mainStore from './store/main';
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('home-component', require('./components/home/HomeComponent.vue').default);
+import HomeComponent from './components/home/HomeComponent.vue'
+Vue.component('home-component', HomeComponent);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,7 +32,7 @@ Vue.component('home-component', require('./components/home/HomeComponent.vue').d
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+new Vue({
     el: '#app',
     store: new Vuex.Store(mainStore)
 });

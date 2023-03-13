@@ -31,26 +31,27 @@ const costStore = {
         selectedCurrencies(aState) {
             const seen = {};
             return aState.costs.filter((cost) => {
-                return seen.hasOwnProperty(cost.currency) ? false : (seen[cost.currency] = true);
+                const hasIt = Object.prototype.hasOwnProperty.call(seen, cost.currency);
+                return hasIt ? false : (seen[cost.currency] = true);
             }).map(cost => cost.currency)
         },
 
-        discount: (aState) => (cost) => {
+        discount: () => (cost) => {
             return getDiscountAmount(cost)
                 .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
-        vat: (state) => (cost) => {
+        vat: () => (cost) => {
             return getVatAmount(cost)
                 .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
-        subTotal: (aState) => (cost) => {
+        subTotal: () => (cost) => {
             return getSubTotal(cost)
                 .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
 
-        total: (aState) => (cost) => {
+        total: () => (cost) => {
             return getTotal(cost)
                 .toLocaleString(undefined, { minimumFractionDigits: 2 })
         },
