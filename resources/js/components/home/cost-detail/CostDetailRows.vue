@@ -93,12 +93,18 @@ export default {
         }
     }
 
-    .uom, .curr {
+    .uom, .curr, .charge-to {
         select {
-            width: 80px;
             padding:5px 10px;
         }
     }
+
+    .uom, .curr {
+        select {
+            width: 80px;
+        }
+    }
+
     .price {
         input {
             width: 100px;
