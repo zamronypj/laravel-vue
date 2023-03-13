@@ -96,6 +96,7 @@ export default {
     .uom, .curr {
         select {
             width: 80px;
+            padding:10px;
         }
     }
     .price {

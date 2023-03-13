@@ -12,11 +12,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$padding-size : 50px;
 .btn-container {
     button {
-        padding-left: $padding-size;
-        padding-right: $padding-size;
         border-radius: 0%;
     }
 }

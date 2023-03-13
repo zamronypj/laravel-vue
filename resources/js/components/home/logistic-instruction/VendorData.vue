@@ -25,8 +25,10 @@
             </label>
         </div>
         <div>
-            <div>Vendor Address</div>
-            <div>{{ vendorAddress }}</div>
+            <label>
+                <div>Vendor Address</div>
+                <div>{{ vendorAddress }}</div>
+            </label>
         </div>
     </div>
 </template>
@@ -106,6 +108,13 @@ export default {
         padding:20px;
         span {
             display: block;
+        }
+        input {
+            background-color: #f0f0f0;
+        }
+
+        select, input {
+            padding:5px 10px;
         }
     }
 }

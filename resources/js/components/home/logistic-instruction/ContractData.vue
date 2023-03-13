@@ -69,6 +69,14 @@ export default {
         span {
             display: block;
         }
+
+        input {
+            background-color: #f0f0f0;
+        }
+
+        select, input {
+            padding:5px 10px;
+        }
     }
 
 }
